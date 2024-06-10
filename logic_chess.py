@@ -112,8 +112,8 @@ class Chess:
             sd = -1
         if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
            or (self.desk[x2][y2] <= 0 and sd == 1 and player_move in False)):
-            if ((abs((x1-x2) * sd) == 1 and abs((y1-y2) * sd) == 2)
-               or (abs((x1-x2) * sd) == 2 and abs((y1-y2) * sd) == 1)):
+            if ((abs((x1 - x2) * sd) == 1 and abs((y1 - y2) * sd) == 2)
+               or (abs((x1 - x2) * sd) == 2 and abs((y1 - y2) * sd) == 1)):
                 self.desk[x2][y2] = self.desk[x1][y1]
                 self.desk[x1][y1] = 0
 
@@ -125,9 +125,11 @@ class Chess:
             sd = 1
         elif side < 0:
             sd = -1
-        if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
-           or (self.desk[x2][y2] <= 0 and sd == 1 and player_move in False)):
-            if abs((x1-x2) * sd) <= 1 and abs((y1-y2) * sd) <= 1:
+        if ((self.desk[x2][y2] >= 0 and sd == -1
+             and player_move in True)
+           or (self.desk[x2][y2] <= 0 and sd == 1
+               and player_move in False)):
+            if abs((x1 - x2) * sd) <= 1 and abs((y1 - y2) * sd) <= 1:
                 self.desk[x2][y2] = self.desk[x1][y1]
                 self.desk[x1][y1] = 0
 
@@ -145,8 +147,9 @@ class Chess:
             elif side < 0:
                 sd = -1
             if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
-               or (self.desk[x2][y2] <= 0 and sd == 1 and player_move in False)):
-                if (abs((x1-x2) * sd) == abs((y1-y2) * sd)
+               or (self.desk[x2][y2] <= 0 and sd == 1
+                   and player_move in False)):
+                if (abs((x1 - x2) * sd) == abs((y1 - y2) * sd)
                    or x1 == x2 or y1 == y2):
                     self.desk[x2][y2] = self.desk[x1][y1]
                     self.desk[x1][y1] = 0
@@ -162,8 +165,10 @@ class Chess:
                 sd = 1
             elif side < 0:
                 sd = -1
-            if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
-               or (self.desk[x2][y2] <= 0 and sd == 1 and player_move in False)):
+            if ((self.desk[x2][y2] >= 0 and sd == -1
+                 and player_move in True)
+               or (self.desk[x2][y2] <= 0 and sd == 1
+                   and player_move in False)):
                 if x1 == x2 or y1 == y2:
                     self.desk[x2][y2] = self.desk[x1][y1]
                     self.desk[x1][y1] = 0
@@ -179,8 +184,10 @@ class Chess:
                 sd = 1
             elif side < 0:
                 sd = -1
-            if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
-               or (self.desk[x2][y2] <= 0 and sd == 1 and player_move in False)):
+            if ((self.desk[x2][y2] >= 0 and sd == -1
+                 and player_move in True)
+               or (self.desk[x2][y2] <= 0 and sd == 1
+                   and player_move in False)):
                 if abs((x1 - x2) * sd) == abs((y1 - y2) * sd):
                     self.desk[x2][y2] = self.desk[x1][y1]
                     self.desk[x1][y1] = 0
