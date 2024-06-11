@@ -6,8 +6,20 @@ from parameters import (
     PLAYING_FIELD,
     colors
 )
-from figures import (horse_w, horse_w_d1, horse_w_d2,
-                     horse, horse_d1, horse_d2)
+from figures import (
+    horse_w, horse_w_d1, horse_w_d2,
+    horse, horse_d1, horse_d2,
+    elimphant_w, elimphant_w_d1, elimphant_w_d2,
+    elimphant, elimphant_d1, elimphant_d2,
+    rook_w, rook_w_d1, rook_w_d2,
+    rook, rook_d1, rook_d2,
+    queen_w, queen_w_d, queen, queen_d,
+    king_w, king_w_d, king, king_d,
+    pawn_w, pawn_w_d1, pawn_w_d2, pawn_w_d3, pawn_w_d4,
+    pawn_w_d5, pawn_w_d6, pawn_w_d7, pawn_w_d8,
+    pawn, pawn_d1, pawn_d2, pawn_d3, pawn_d4, pawn_d5,
+    pawn_d6, pawn_d7, pawn_d8
+)
 
 pygame.init()
 
@@ -44,6 +56,34 @@ table.blit(horse_w, horse_w_d1)
 table.blit(horse_w, horse_w_d2)
 table.blit(horse, horse_d1)
 table.blit(horse, horse_d2)
+table.blit(elimphant_w, elimphant_w_d1)
+table.blit(elimphant_w, elimphant_w_d2)
+table.blit(elimphant, elimphant_d1)
+table.blit(elimphant, elimphant_d2)
+table.blit(rook_w, rook_w_d1)
+table.blit(rook_w, rook_w_d2)
+table.blit(rook, rook_d1)
+table.blit(rook, rook_d2)
+table.blit(king_w, king_w_d)
+table.blit(king, king_d)
+table.blit(queen_w, queen_w_d)
+table.blit(queen, queen_d)
+table.blit(pawn_w, pawn_w_d1)
+table.blit(pawn_w, pawn_w_d2)
+table.blit(pawn_w, pawn_w_d3)
+table.blit(pawn_w, pawn_w_d4)
+table.blit(pawn_w, pawn_w_d5)
+table.blit(pawn_w, pawn_w_d6)
+table.blit(pawn_w, pawn_w_d7)
+table.blit(pawn_w, pawn_w_d8)
+table.blit(pawn, pawn_d1)
+table.blit(pawn, pawn_d2)
+table.blit(pawn, pawn_d3)
+table.blit(pawn, pawn_d4)
+table.blit(pawn, pawn_d5)
+table.blit(pawn, pawn_d6)
+table.blit(pawn, pawn_d7)
+table.blit(pawn, pawn_d8)
 
 sc.blit(table, (10, 60))
 pygame.display.update()
