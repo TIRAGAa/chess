@@ -12,11 +12,11 @@ class Chess:
                      [-8, -2, -7, -6, -5, -7, -2, -8]]
 
     def __repr__(self):
-        result = ""
+        result = ''
         for i in range(len(self.desk)):
             for elem in self.desk[i]:
-                result += f"{str(elem)} "
-            result += "\n"
+                result += f'{str(elem)}'
+            result += '\n'
         return result
 
     def definition(self):
@@ -24,8 +24,10 @@ class Chess:
         self.num += 1
         print(f'<<<{self.num}>>>')
         if self.num % 2 == 0:
+            print('Ход черных')
             return True
         else:
+            print('Ход белых')
             return False
 
     def move(self, x1, y1, x2, y2):
@@ -42,7 +44,7 @@ class Chess:
         elif abs(self.desk[x1][y1]) == 8:
             self.rook(x1, y1, x2, y2)
         else:
-            print("тут пусто")
+            print('тут пусто')
 
     # Проверка наличия помехи по диагоналям
     def exam45(self, x1, y1, x2, y2):
@@ -110,8 +112,8 @@ class Chess:
             sd = 1
         elif side < 0:
             sd = -1
-        if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
-           or (self.desk[x2][y2] <= 0 and sd == 1 and player_move in False)):
+        if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move == True)
+           or (self.desk[x2][y2] <= 0 and sd == 1 and player_move == False)):
             if ((abs((x1 - x2) * sd) == 1 and abs((y1 - y2) * sd) == 2)
                or (abs((x1 - x2) * sd) == 2 and abs((y1 - y2) * sd) == 1)):
                 self.desk[x2][y2] = self.desk[x1][y1]
@@ -126,9 +128,9 @@ class Chess:
         elif side < 0:
             sd = -1
         if ((self.desk[x2][y2] >= 0 and sd == -1
-             and player_move in True)
+             and player_move == True)
            or (self.desk[x2][y2] <= 0 and sd == 1
-               and player_move in False)):
+               and player_move == False)):
             if abs((x1 - x2) * sd) <= 1 and abs((y1 - y2) * sd) <= 1:
                 self.desk[x2][y2] = self.desk[x1][y1]
                 self.desk[x1][y1] = 0
@@ -140,15 +142,15 @@ class Chess:
             move = self.exam90(x1, y1, x2, y2)
         else:
             move = self.exam45(x1, y1, x2, y2)
-        if move in True:
+        if move == True:
             side = self.desk[x1][y1]
             if side > 0:
                 sd = 1
             elif side < 0:
                 sd = -1
-            if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move in True)
+            if ((self.desk[x2][y2] >= 0 and sd == -1 and player_move == True)
                or (self.desk[x2][y2] <= 0 and sd == 1
-                   and player_move in False)):
+                   and player_move == False)):
                 if (abs((x1 - x2) * sd) == abs((y1 - y2) * sd)
                    or x1 == x2 or y1 == y2):
                     self.desk[x2][y2] = self.desk[x1][y1]
@@ -159,16 +161,16 @@ class Chess:
     # ЛАДЬЯ 8
     def rook(self, x1, y1, x2, y2):
         player_move = self.definition()
-        if self.exam90(x1, y1, x2, y2) in True:
+        if self.exam90(x1, y1, x2, y2) == True:
             side = self.desk[x1][y1]
             if side > 0:
                 sd = 1
             elif side < 0:
                 sd = -1
             if ((self.desk[x2][y2] >= 0 and sd == -1
-                 and player_move in True)
+                 and player_move == True)
                or (self.desk[x2][y2] <= 0 and sd == 1
-                   and player_move in False)):
+                   and player_move == False)):
                 if x1 == x2 or y1 == y2:
                     self.desk[x2][y2] = self.desk[x1][y1]
                     self.desk[x1][y1] = 0
@@ -178,16 +180,16 @@ class Chess:
     # СЛОН 7
     def elephant(self, x1, y1, x2, y2):
         player_move = self.definition()
-        if self.exam45(x1, y1, x2, y2) in True:
+        if self.exam45(x1, y1, x2, y2) == True:
             side = self.desk[x1][y1]
             if side > 0:
                 sd = 1
             elif side < 0:
                 sd = -1
             if ((self.desk[x2][y2] >= 0 and sd == -1
-                 and player_move in True)
+                 and player_move == True)
                or (self.desk[x2][y2] <= 0 and sd == 1
-                   and player_move in False)):
+                   and player_move == False)):
                 if abs((x1 - x2) * sd) == abs((y1 - y2) * sd):
                     self.desk[x2][y2] = self.desk[x1][y1]
                     self.desk[x1][y1] = 0
@@ -198,16 +200,16 @@ class Chess:
     def pawn(self, x1, y1, x2, y2):
         player_move = self.definition()
         side = self.desk[x1][y1]
-        if ((self.desk[x2][y2] > 0 and side == -1 and player_move in True)
-           or (self.desk[x2][y2] < 0 and side == 1 and player_move in False)):
+        if ((self.desk[x2][y2] > 0 and side == -1 and player_move == True)
+           or (self.desk[x2][y2] < 0 and side == 1 and player_move == False)):
             if y1 + 1 == y2 or y1 - 1 == y2:
                 self.desk[x2][y2] = self.desk[x1][y1]
                 self.desk[x1][y1] = 0
                 if x2 == 7 or x2 == 0:
                     upgrade = int(input('2 or 7 or 8: '))
                     self.desk[x2][y2] = upgrade * side
-        if ((x1 == 1 and side == 1 and player_move in True)
-           or (x1 == 6 and side == -1 and player_move in False)):
+        if ((x1 == 1 and side == 1 and player_move == True)
+           or (x1 == 6 and side == -1 and player_move == False)):
             if x1 + (2 * side) == x2:
                 self.desk[x2][y2] = self.desk[x1][y1]
                 self.desk[x1][y1] = 0

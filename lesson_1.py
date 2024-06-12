@@ -11,6 +11,9 @@ table.fill(colors['dark'])
 
 sc.blit(table, (10, 60))
 
+pygame.draw.rect(table, colors['white'], (10, 60, 47, 47))
+
+
 while True:
     pygame.display.update()
     for event in pygame.event.get():
